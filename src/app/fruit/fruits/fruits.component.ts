@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { addToCart, removeFromCart } from '../../store/cart.action';
 
 @Component({
   selector: 'app-fruits',
@@ -10,5 +12,17 @@ import { RouterModule } from '@angular/router';
 })
 
 export class FruitsComponent {
+
+  constructor(public store: Store) {
+
+  }
   
+  addItem() {
+    this.store.dispatch(addToCart({msg: 'Item Added succesfully'}));
+  }
+
+  removeItem() {
+    this.store.dispatch(removeFromCart());
+  }
+
 }

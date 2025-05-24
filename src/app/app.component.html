@@ -1,4 +1,4 @@
-<div class="bg-gray-100 p-2">
+<div class="bg-gray-100 p-2 flex">
   <ul class="flex">
     <li class="m-2">
       <a class="font-semibold" routerLink="">Home</a>
@@ -10,6 +10,7 @@
       <a class="font-semibold" routerLink="/fruits">Fruits</a>
     </li>
   </ul>
+  <span class="p-2">Selected Items: {{cartCount$ | async}}</span>
 </div>
 
 <router-outlet></router-outlet>

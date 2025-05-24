@@ -4,8 +4,8 @@
     <img [src]="'https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w='" alt="apple" width="150" height="150">
     <footer class="bg-gray-100">
       <span class="m-3">Apple</span>
-      <span class="m-3 pr-2 pl-2 border rounded-sm bg-green-600 text-white cursor-pointer">+</span>
-      <span class="m-3 pr-2 pl-2 border rounded-sm bg-red-600 text-white cursor-pointer">-</span>
+      <button class="ml-5 mr-2 pr-2 pl-2 border rounded-sm bg-green-600 text-white cursor-pointer" (click)="addItem()">+</button>
+      <button class="pr-2 pl-2 border rounded-sm bg-red-600 text-white cursor-pointer" (click)="removeItem()">-</button>
     </footer>
   </div>
   <div class="border rounded-md w-42 m-4 text-center">
@@ -13,8 +13,8 @@
     <img [src]="'https://media.istockphoto.com/id/185284489/photo/orange.jpg?s=612x612&w=0&k=20&c=m4EXknC74i2aYWCbjxbzZ6EtRaJkdSJNtekh4m1PspE='" alt="apple" width="150" height="150">
     <footer class="bg-gray-100 mt-3">
       <span class="m-3">Orange</span>
-      <span class="m-3 pr-2 pl-2 border rounded-sm bg-green-600 text-white cursor-pointer">+</span>
-      <span class="m-3 pr-2 pl-2 border rounded-sm bg-red-600 text-white cursor-pointer">-</span>
+      <button class="ml-5 mr-2 pr-2 pl-2 border rounded-sm bg-green-600 text-white cursor-pointer" (click)="addItem()">+</button>
+      <button class="pr-2 pl-2 border rounded-sm bg-red-600 text-white cursor-pointer" (click)="removeItem()">-</button>
     </footer>
   </div>
   <div class="border rounded-md w-42 m-4 text-center">
@@ -22,8 +22,8 @@
     <img class="mt-5" [src]="'https://t4.ftcdn.net/jpg/06/29/12/11/240_F_629121120_jaY4XTSKu3760pzB9P8MQ4rGBrCd66vS.jpg'" alt="apple" width="150" height="150">
     <footer class="bg-gray-100 mt-7">
       <span class="m-3">Grapes</span>
-      <span class="m-3 pr-2 pl-2 border rounded-sm bg-green-600 text-white cursor-pointer">+</span>
-      <span class="m-3 pr-2 pl-2 border rounded-sm bg-red-600 text-white cursor-pointer">-</span>
+      <button class="ml-5 mr-2 pr-2 pl-2 border rounded-sm bg-green-600 text-white cursor-pointer" (click)="addItem()">+</button>
+      <button class="pr-2 pl-2 border rounded-sm bg-red-600 text-white cursor-pointer" (click)="removeItem()">-</button>
     </footer>
   </div>
 </div>
