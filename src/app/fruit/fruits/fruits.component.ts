@@ -8,21 +8,29 @@ import { addToCart, removeFromCart } from '../../store/cart.action';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './fruits.component.html',
-  styleUrl: './fruits.component.scss'
+  styleUrl: './fruits.component.scss',
 })
-
 export class FruitsComponent {
+  constructor(public store: Store) {}
 
-  constructor(public store: Store) {
-
+  addItem(id: number, name: string, price: number) {
+    this.store.dispatch(
+      addToCart({
+        item: {
+          id: id,
+          name: name,
+          price: price,
+          quantity: 1,
+        },
+      })
+    );
   }
-  
-  addItem() {
-    this.store.dispatch(addToCart({msg: 'Item Added succesfully'}));
-  }
 
-  removeItem() {
-    this.store.dispatch(removeFromCart());
+  removeItem(id: number, name: string, price: number) {
+    this.store.dispatch(
+      removeFromCart({
+        id: id,
+      })
+    );
   }
-
 }

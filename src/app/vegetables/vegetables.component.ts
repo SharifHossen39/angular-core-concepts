@@ -7,21 +7,29 @@ import { addToCart, removeFromCart } from '../store/cart.action';
   standalone: true,
   imports: [],
   templateUrl: './vegetables.component.html',
-  styleUrl: './vegetables.component.scss'
+  styleUrl: './vegetables.component.scss',
 })
-
 export class VegetablesComponent {
+  constructor(public store: Store) {}
 
-  constructor(
-    public store: Store
-  ){}
-
-  addItem() {
-    this.store.dispatch(addToCart({msg: 'Item Added succesfully'}));
+  addItem(id: number, vegName: string, price: number) {
+    this.store.dispatch(
+      addToCart({
+        item: {
+          id: id,
+          name: vegName,
+          price: price,
+          quantity: 1,
+        },
+      })
+    );
   }
 
-  removeItem() {
-    this.store.dispatch(removeFromCart());
+  removeItem(id: number, vegName: string, price: number) {
+    this.store.dispatch(
+      removeFromCart({
+        id: id,
+      })
+    );
   }
-
 }
