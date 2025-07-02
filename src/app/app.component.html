@@ -10,7 +10,7 @@
       <a class="font-semibold" routerLink="/fruits">Fruits</a>
     </li>
   </ul>
-  <span class="p-2">Selected Items: {{ totalItem }}</span>
+  <span class="p-2">Selected Items: {{ totalItem | async }}</span>
 </div>
 
 <router-outlet></router-outlet>

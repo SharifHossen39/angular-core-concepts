@@ -12,18 +12,13 @@ import { Observable, Subscription } from 'rxjs';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnDestroy {
-  cartCount$: Observable<number>;
+  cartItems$: Observable<any>;
   totalItem: number = 0;
-   private readonly subscription: Subscription = new Subscription();
+  private readonly subscription: Subscription = new Subscription();
 
   constructor(private readonly store: Store<{ cartCount: number }>) {
-    this.cartCount$ = this.store.select('cartCount');
-    this.subscription.add(
-      this.cartCount$.subscribe((count) => {
-        this.totalItem++;
-        console.log('CART', this.totalItem);
-      })
-    );
+    this.cartItems$ = this.store.select((state) => state.cart);
+    this.totalItem$ = this.cartItems$.pipe(map((items) => items.length));
   }
 
   ngOnDestroy() {
